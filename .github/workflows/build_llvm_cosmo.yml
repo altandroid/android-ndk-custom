@@ -10,7 +10,7 @@ on:
       projects:
         description: "Projects to build:"
         # bolt;clang;clang-tools-extra;compiler-rt;cross-project-tests;libc;libclc;lld;lldb;mlir;openmp;polly;pstl;flang
-        default: "bolt;clang;clang-tools-extra;lld"
+        default: "bolt;clang;clang-tools-extra;lld;lldb"
         required: true
 
 jobs:
@@ -241,6 +241,12 @@ jobs:
             -DLLVM_ENABLE_LIBXML2=OFF \
             -DLLVM_ENABLE_CURL=OFF \
             -DLLVM_ENABLE_THREADS=ON \
+            -DLLDB_ENABLE_LIBEDIT=OFF \
+            -DLLDB_ENABLE_CURSES=OFF \
+            -DLLDB_ENABLE_LZMA=OFF \
+            -DLLDB_ENABLE_LIBXML2=OFF \
+            -DLLDB_ENABLE_PYTHON=OFF \
+            -DLLDB_ENABLE_LUA=OFF \
             -DLLVM_VERSION_SUFFIX="" \
             -DCLANG_VENDOR="Android"
 
