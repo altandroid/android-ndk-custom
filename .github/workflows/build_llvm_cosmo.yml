@@ -95,6 +95,8 @@ jobs:
             curl -LkSs "https://github.com/HomuHomu833/android-ndk-custom/raw/refs/heads/$(git branch --show-current)/patches/llvm/cosmo/$LLVM_VERSION/gcc-14-arm-fix.patch" | git apply
           fi
 
+          sed -i 's/add_lldb_library(liblldb SHARED/add_lldb_library(liblldb STATIC/' lldb/source/API/CMakeLists.txt
+
           echo "All patches applied successfully."
 
       - name: Setup cosmo toolchain
@@ -247,6 +249,7 @@ jobs:
             -DLLDB_ENABLE_LIBXML2=OFF \
             -DLLDB_ENABLE_PYTHON=OFF \
             -DLLDB_ENABLE_LUA=OFF \
+            -DLLDB_BUILD_FRAMEWORK=OFF \
             -DLLVM_VERSION_SUFFIX="" \
             -DCLANG_VENDOR="Android"
 
