@@ -221,7 +221,7 @@ jobs:
       - name: Get NDK and LLVM
         run: |
           curl -LkSs https://dl.google.com/android/repository/android-ndk-r${{inputs.version}}-linux.zip >ndk.zip && unzip -q ndk.zip
-          curl -LkSs https://github.com/HomuHomu833/android-ndk-custom/releases/download/llvm-r${{inputs.version}}/bolt+clang+clang-tools-extra+lld-r${{inputs.version}}-${{matrix.target}}.tar.xz | tar -xJf -
+          curl -LkSs https://github.com/HomuHomu833/android-ndk-custom/releases/download/llvm-r${{inputs.version}}/bolt+clang+clang-tools-extra+lld+lldb-r${{inputs.version}}-${{matrix.target}}.tar.xz | tar -xJf -
 
       - name: Make NDK musl
         run: |
