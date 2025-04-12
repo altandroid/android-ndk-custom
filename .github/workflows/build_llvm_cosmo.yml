@@ -10,7 +10,7 @@ on:
       projects:
         description: "Projects to build:"
         # bolt;clang;clang-tools-extra;compiler-rt;cross-project-tests;libc;libclc;lld;lldb;mlir;openmp;polly;pstl;flang
-        default: "bolt;clang;clang-tools-extra;lld"
+        default: "bolt;clang;clang-tools-extra;lld;lldb"
         required: true
 
 jobs:
@@ -96,6 +96,7 @@ jobs:
           fi
 
           sed -i 's/add_lldb_library(liblldb SHARED/add_lldb_library(liblldb STATIC/' lldb/source/API/CMakeLists.txt
+          sed -i 's/add_lldb_library(lldbIntelFeatures SHARED/add_lldb_library(lldbIntelFeatures STATIC/' lldb/tools/intel-features/CMakeLists.txt
 
           echo "All patches applied successfully."
 
