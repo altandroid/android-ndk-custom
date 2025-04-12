@@ -19,11 +19,11 @@ A custom-built Android NDK that replaces the default toolchain with a modified L
     - Linux
     - Android
   - **Architectures**:
-    - **X**: `x86`, `x86_64`
+    - **X**: `x32`, `x86`, `x86_64`
     - **ARM**: `arm`, `armeb`, `aarch64`, `aarch64_be`
-    - **RISC-V**: `riscv32`, `riscv64`
+    - **RISC-V**: `riscv64`
     - **LoongArch**: `loongarch64`
-    - **PowerPC**: `powerpc`, `powerpc64`, `powerpc64le`
+    - **PowerPC**: `powerpc64`, `powerpc64le`
     - **Other**: `s390x`
 
 - **Cosmopolitan Environment**
