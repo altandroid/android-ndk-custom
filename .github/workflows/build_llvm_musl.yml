@@ -95,6 +95,7 @@ jobs:
           curl -LkSs "https://github.com/HomuHomu833/android-ndk-custom/raw/refs/heads/$(git branch --show-current)/patches/llvm/musl/$LLVM_VERSION/BOLT-32-bits-fix.patch" | git apply
 
           sed -i 's/add_lldb_library(liblldb SHARED/add_lldb_library(liblldb STATIC/' lldb/source/API/CMakeLists.txt
+          sed -i 's/add_lldb_library(lldbIntelFeatures SHARED/add_lldb_library(lldbIntelFeatures STATIC/' lldb/tools/intel-features/CMakeLists.txt
 
           echo "All patches applied successfully."
 
